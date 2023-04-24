@@ -57,9 +57,14 @@ namespace ngl
     ViewVectorHolder::apply(
         const ViewVectorHolder::MatrixHolderType &matrix)
     {
-        m_position = glm::vec3(matrix.get_matrix() * glm::vec4(m_position));
-        m_target = glm::vec3(matrix.get_matrix() * glm::vec4(m_target));
-        m_up = glm::vec3(matrix.get_matrix() * glm::vec4(m_up));
+        auto to_vec4 = [](const glm::vec3 &vec) -> glm::vec4
+        {
+            return glm::vec4(vec.x, vec.y, vec.z, 1.0f);
+        };
+
+        m_position = glm::vec3(matrix.get_matrix() * to_vec4(m_position));
+        m_target = glm::vec3(matrix.get_matrix() * to_vec4(m_target));
+        m_up = glm::vec3(matrix.get_matrix() * to_vec4(m_up));
     }
 
 } // namespace ngl

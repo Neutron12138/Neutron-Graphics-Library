@@ -27,13 +27,13 @@ namespace ngl
         glm::vec3 m_up = glm::vec3(0.0f, 1.0f, 0.0f);
 
     public:
-        constexpr ViewVectorHolder() = default;
-        constexpr explicit ViewVectorHolder(const glm::vec3 &position, const glm::vec3 &target, const glm::vec3 &up);
-        constexpr explicit ViewVectorHolder(const SelfType &from) = default;
+        ViewVectorHolder() = default;
+        explicit ViewVectorHolder(const glm::vec3 &position, const glm::vec3 &target, const glm::vec3 &up);
+        explicit ViewVectorHolder(const SelfType &from) = default;
         ~ViewVectorHolder() override = default;
 
     public:
-        constexpr SelfType &operator=(const SelfType &from) = default;
+        SelfType &operator=(const SelfType &from) = default;
 
     public:
         /// @brief 获取视图的位置

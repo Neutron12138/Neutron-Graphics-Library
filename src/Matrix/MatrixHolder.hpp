@@ -33,7 +33,7 @@ namespace ngl
     public:
         /// @brief 设置矩阵
         /// @param matrix 要设置的矩阵
-        virtual void set_matrix(const MatrixType &matrix);
+        SelfType &set_matrix(const MatrixType &matrix);
 
         /// @brief 获取矩阵
         /// @return 矩阵

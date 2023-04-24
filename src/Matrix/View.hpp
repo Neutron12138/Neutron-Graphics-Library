@@ -24,12 +24,12 @@ namespace ngl
 
     public:
         View() = default;
-        constexpr explicit View(const ViewVectorHolder &holder);
-        constexpr explicit View(const SelfType &from) = default;
+        explicit View(const ViewVectorHolder &holder);
+        explicit View(const SelfType &from) = default;
         ~View() override = default;
 
     public:
-        constexpr SelfType &operator=(const SelfType &from) = default;
+        SelfType &operator=(const SelfType &from) = default;
 
     public:
         ///

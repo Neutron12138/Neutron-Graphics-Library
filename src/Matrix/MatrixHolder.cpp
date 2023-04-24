@@ -11,7 +11,7 @@ namespace ngl
         : m_matrix(matrix) {}
 
     template <typename m_MatrixType>
-    void
+    typename MatrixHolder<m_MatrixType>::SelfType &
     MatrixHolder<m_MatrixType>::set_matrix(
         const MatrixType &matrix)
     {
